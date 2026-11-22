@@ -141,7 +141,9 @@ WHERE SUBSTRING(Nummer, 1, 1) != '0' AND SUBSTRING(Nummer, 1, 1) != '+';
 -- Spalte hinzufügen für Uppercase Vor- und Nachname
 ALTER TABLE Personen
 ADD Name_Groß varchar(510)
+GO
 
 -- Spalte für Uppercase Vor- und Nachname befüllen
 UPDATE Personen
 SET Name_Groß = Concat(UPPER(Vorname), ' ', UPPER(Name))
+GO
