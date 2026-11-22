@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="Aufgabe_API/Aufgabe_API.csproj" />
+  <Project Path="Aufgabe_DTO/Aufgabe_DTO.csproj" />
 </Solution>

@@ -1,9 +1,20 @@
+using Aufgabe_API.Data;
+using Aufgabe_API.Model;
+using Aufgabe_DTO.Person;
+using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<ApplicationDBContext>(option =>
+{
+    option.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
+});
+builder.Services.AddAutoMapper(x =>
+{
+    x.CreateMap<Person, PersonDTO>().ReverseMap();
+});
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
