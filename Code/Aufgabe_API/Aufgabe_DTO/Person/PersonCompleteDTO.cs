@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Aufgabe_DTO.Person
+﻿namespace Aufgabe_DTO.Person
 {
-    public class PersonDTO
+    public class PersonCompleteDTO
     {
         public int PersonID { get; set; }
 

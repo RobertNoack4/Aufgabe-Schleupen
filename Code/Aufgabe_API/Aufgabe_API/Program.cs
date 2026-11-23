@@ -13,7 +13,8 @@ builder.Services.AddDbContext<ApplicationDBContext>(option =>
 });
 builder.Services.AddAutoMapper(x =>
 {
-    x.CreateMap<Person, PersonDTO>().ReverseMap();
+    x.CreateMap<Person, PersonCompleteDTO>().ReverseMap();
+    x.CreateMap<Person, PersonPartialDTO>().ReverseMap();
 });
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
