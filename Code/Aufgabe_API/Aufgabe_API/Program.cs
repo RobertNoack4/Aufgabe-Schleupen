@@ -2,6 +2,7 @@ using Aufgabe_API.Data;
 using Aufgabe_API.Model;
 using Aufgabe_DTO.Anschrift;
 using Aufgabe_DTO.Person;
+using Aufgabe_DTO.TelefonVerbindung;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -18,6 +19,8 @@ builder.Services.AddAutoMapper(x =>
     x.CreateMap<Person, PersonPartialDTO>().ReverseMap();
     x.CreateMap<Anschrift, AnschriftDTO>().ReverseMap();
     x.CreateMap<Anschrift, AnschriftCreateDTO>().ReverseMap();
+    x.CreateMap<Telefonverbindung, TelefonverbindungDTO>().ReverseMap();
+    x.CreateMap<Telefonverbindung, TelefonverbindungCreateDTO>().ReverseMap();
 });
 builder.Services.AddControllers();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
