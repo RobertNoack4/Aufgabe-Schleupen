@@ -45,11 +45,6 @@ namespace Aufgabe_API.Controllers
             try
             {
                 var personen = await _dbContext.Personen.Where(x => x.Name_Groß.Contains(name)).ToListAsync();
-                if (personen == null || personen.Count == 0)
-                {
-                    return NotFound($"No Person found matching {name}");
-                }
-
                 var dtoResponse = _mapper.Map<List<PersonPartialDTO>>(personen);
                 return Ok(dtoResponse);
             }
