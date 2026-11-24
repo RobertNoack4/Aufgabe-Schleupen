@@ -85,7 +85,7 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                var telefonverbindung = await _dbContext.Telefonverbindungen.FirstOrDefaultAsync(x => x.AnschriftID == id);
+                var telefonverbindung = await _dbContext.Telefonverbindungen.FirstOrDefaultAsync(x => x.TelefonverbindungsID == id);
 
                 if (telefonverbindung == null)
                 {

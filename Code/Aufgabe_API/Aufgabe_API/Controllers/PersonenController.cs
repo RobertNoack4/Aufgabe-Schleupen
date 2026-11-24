@@ -36,7 +36,7 @@ namespace Aufgabe_API.Controllers
             }
         }
 
-        [HttpGet("{name:alpha}")]
+        [HttpGet("by-name/{name}")]
         [ProducesResponseType(typeof(IEnumerable<PersonPartialDTO>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(object), StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(object), StatusCodes.Status500InternalServerError)]
