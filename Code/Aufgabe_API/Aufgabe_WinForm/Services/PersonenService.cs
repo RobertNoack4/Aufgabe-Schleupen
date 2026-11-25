@@ -1,8 +1,6 @@
-﻿using Aufgabe_WinForm.Model;
+﻿using Aufgabe_DTO.Person;
+using Aufgabe_WinForm.Model;
 using Aufgabe_WinForm.Services.IServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aufgabe_WinForm.Services
 {
@@ -25,6 +23,16 @@ namespace Aufgabe_WinForm.Services
             {
                 ApiType = ApiType.ApiTypeEnum.GET,
                 Url = $"{endpoint}/by-name/{name}"
+            });
+        }
+
+        public Task<T?> UpdatePersonName<T>(PersonUpdateNameDTO personUpdateNameDTO)
+        {
+            return SendAsync<T>(new ApiRequest
+            {
+                ApiType = ApiType.ApiTypeEnum.PUT,
+                Data = personUpdateNameDTO,
+                Url = $"{endpoint}/{personUpdateNameDTO.PersonID}"
             });
         }
     }

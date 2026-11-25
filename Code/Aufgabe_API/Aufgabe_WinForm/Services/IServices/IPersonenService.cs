@@ -6,5 +6,6 @@ namespace Aufgabe_WinForm.Services.IServices
     {
         Task<T?> GetPersonenAsync<T>();
         Task<T?> GetPersonenByNameAsync<T>(string name);
+        Task<T?> UpdatePersonName<T>(PersonUpdateNameDTO personUpdateNameDTO);
     }
 }

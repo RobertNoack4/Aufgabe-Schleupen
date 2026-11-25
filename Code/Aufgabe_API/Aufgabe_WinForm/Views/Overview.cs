@@ -1,20 +1,23 @@
 using Aufgabe_DTO.Person;
 using Aufgabe_WinForm.Controller;
+using Aufgabe_WinForm.Controller.View_Controller;
 using Aufgabe_WinForm.Services;
 
 namespace Aufgabe_WinForm
 {
     public partial class Overview : Form
     {
-        public Overview()
+        private readonly OverviewController _controller;
+
+        internal Overview(OverviewController controller)
         {
             InitializeComponent();
+            _controller = controller;
         }
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var personenList = await PersonenController.GetPersonen();
-            dataGridView1.DataSource = personenList;
+            dataGridView1.DataSource = await _controller.GetPersonenAsync();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -32,8 +35,7 @@ namespace Aufgabe_WinForm
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-            var personenList = await PersonenController.GetPersonenByNameAsync(textBox1.Text);
-            dataGridView1.DataSource = personenList;
+            dataGridView1.DataSource = await _controller.GetPersonenByNameAsync(textBox1.Text);
         }
     }
 }
