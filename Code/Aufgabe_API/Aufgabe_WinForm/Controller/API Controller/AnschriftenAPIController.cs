@@ -31,7 +31,7 @@ namespace Aufgabe_WinForm.Controller.API_Controller
             {
                 return await _anschriftenService.CreateAnschrift<AnschriftDTO>(anschriftCreateDTO);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected Error: {ex.Message}");
                 return null;

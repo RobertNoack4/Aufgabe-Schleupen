@@ -1,16 +1,13 @@
 ﻿using Aufgabe_DTO.TelefonVerbindung;
 using Aufgabe_WinForm.Model;
 using Aufgabe_WinForm.Services.IServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aufgabe_WinForm.Services
 {
     internal class TelefonverbindungsService : BaseService, ITelefonverbindungsService
     {
         private const string endpoint = "api/telefonverbindung";
-        
+
         public Task<T?> GetTelefonverbindungenByPersonID<T>(int personID)
         {
             return SendAsync<T>(new ApiRequest

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Security.AccessControl;
-using System.Text;
-
-namespace Aufgabe_WinForm.Model
+﻿namespace Aufgabe_WinForm.Model
 {
     internal class ApiRequest
     {

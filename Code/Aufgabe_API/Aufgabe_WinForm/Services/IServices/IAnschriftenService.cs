@@ -1,7 +1,4 @@
 ﻿using Aufgabe_DTO.Anschrift;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aufgabe_WinForm.Services.IServices
 {

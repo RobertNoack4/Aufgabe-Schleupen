@@ -20,7 +20,7 @@ namespace Aufgabe_WinForm
             var personenAPI = new PersonenAPIController(new PersonenService());
             var anschriftenAPI = new AnschriftenAPIController(new AnschriftenService());
             var telefonAPI = new TelefonverbindungAPIController(new TelefonverbindungsService());
-            var overviewController = new OverviewViewController(personenAPI, anschriftenAPI,telefonAPI);
+            var overviewController = new OverviewViewController(personenAPI, anschriftenAPI, telefonAPI);
 
             var overview = new Overview(overviewController);
 

@@ -7,7 +7,7 @@ namespace Aufgabe_API.Model
         [Key]
         public int TelefonverbindungsID { get; set; }
 
-        public string Nummer {  get; set; }
+        public string Nummer { get; set; }
 
         public int PersonID { get; set; }
     }

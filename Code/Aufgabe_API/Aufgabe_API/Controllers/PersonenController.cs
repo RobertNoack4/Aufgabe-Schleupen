@@ -93,19 +93,19 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                if(personUpdateNameDTO == null)
+                if (personUpdateNameDTO == null)
                 {
                     return BadRequest("New Person Data is required");
                 }
 
-                if(personUpdateNameDTO.PersonID != id)
+                if (personUpdateNameDTO.PersonID != id)
                 {
                     return BadRequest("PersonID in URL and PersonID in Data need to match");
                 }
 
                 var person = _dbContext.Personen.FirstOrDefault(x => x.PersonID == id);
 
-                if(person == null)
+                if (person == null)
                 {
                     return NotFound($"No Person with PersonID {id} has been found");
                 }

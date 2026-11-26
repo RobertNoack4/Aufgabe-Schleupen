@@ -30,7 +30,7 @@ namespace Aufgabe_WinForm.Services
         {
             return SendAsync<T>(new ApiRequest
             {
-                ApiType= ApiType.ApiTypeEnum.GET,
+                ApiType = ApiType.ApiTypeEnum.GET,
                 Url = $"{endpoint}/{id}"
             });
         }

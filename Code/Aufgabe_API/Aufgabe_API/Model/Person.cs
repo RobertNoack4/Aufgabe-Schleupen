@@ -11,8 +11,8 @@ namespace Aufgabe_API.Model
 
         public string Vorname { get; set; }
 
-        public DateOnly Geburtsdatum {  get; set; }
+        public DateOnly Geburtsdatum { get; set; }
 
-        public string Name_Groß {  get; set; }
+        public string Name_Groß { get; set; }
     }
 }

@@ -1,9 +1,5 @@
-﻿using Aufgabe_DTO.Anschrift;
-using Aufgabe_DTO.TelefonVerbindung;
+﻿using Aufgabe_DTO.TelefonVerbindung;
 using Aufgabe_WinForm.Services.IServices;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aufgabe_WinForm.Controller.API_Controller
 {

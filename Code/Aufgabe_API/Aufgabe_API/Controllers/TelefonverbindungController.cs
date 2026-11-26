@@ -1,6 +1,5 @@
 ﻿using Aufgabe_API.Data;
 using Aufgabe_API.Model;
-using Aufgabe_DTO.Anschrift;
 using Aufgabe_DTO.TelefonVerbindung;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;

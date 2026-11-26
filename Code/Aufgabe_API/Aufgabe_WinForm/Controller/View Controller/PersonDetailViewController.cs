@@ -3,10 +3,6 @@ using Aufgabe_DTO.Person;
 using Aufgabe_DTO.TelefonVerbindung;
 using Aufgabe_WinForm.Controller.API_Controller;
 using Aufgabe_WinForm.Views;
-using System;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using System.Text;
 
 namespace Aufgabe_WinForm.Controller.View_Controller
 {
@@ -52,7 +48,7 @@ namespace Aufgabe_WinForm.Controller.View_Controller
 
         internal async Task<object> DeleteTelefonverbindungAsync(int id)
         {
-            if(OpenMessageBox("Telefonverbindung"))
+            if (OpenMessageBox("Telefonverbindung"))
             {
                 return await _tefonverbindungAPIController.DeleteTelefonverbindungAsync(id);
             }
@@ -89,7 +85,7 @@ namespace Aufgabe_WinForm.Controller.View_Controller
             DialogResult result = MessageBox.Show($"Bist du sicher dass du diese {name} löschen willst?", "Löschen",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if(result == DialogResult.Yes)
+            if (result == DialogResult.Yes)
             {
                 return true;
             }

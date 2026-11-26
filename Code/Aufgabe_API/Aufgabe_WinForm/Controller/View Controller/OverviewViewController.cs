@@ -1,6 +1,5 @@
 ﻿using Aufgabe_DTO.Person;
 using Aufgabe_WinForm.Controller.API_Controller;
-using Aufgabe_WinForm.Services;
 
 namespace Aufgabe_WinForm.Controller.View_Controller
 {
@@ -31,7 +30,7 @@ namespace Aufgabe_WinForm.Controller.View_Controller
         internal void CreatePersonDetailView(int personID)
         {
 
-            var personDetailController = new PersonDetailViewController(_personenAPIController, _anschriftenAPIController, 
+            var personDetailController = new PersonDetailViewController(_personenAPIController, _anschriftenAPIController,
                 _telefonverbindungAPIController, personID);
             var personDetailView = new PersonDetail(personDetailController);
 

@@ -22,7 +22,7 @@ namespace Aufgabe_WinForm.Services
                     Method = GetHttpMethod(request.ApiType)
                 };
 
-                if(request.Data != null)
+                if (request.Data != null)
                 {
                     message.Content = JsonContent.Create(request.Data);
                 }
@@ -40,7 +40,7 @@ namespace Aufgabe_WinForm.Services
 
         private static HttpMethod GetHttpMethod(ApiType.ApiTypeEnum apiType)
         {
-            switch(apiType)
+            switch (apiType)
             {
                 case ApiType.ApiTypeEnum.GET:
                     return HttpMethod.Get;
@@ -51,7 +51,7 @@ namespace Aufgabe_WinForm.Services
                 case ApiType.ApiTypeEnum.DELETE:
                     return HttpMethod.Delete;
                 default:
-                    return HttpMethod.Get;  
+                    return HttpMethod.Get;
             }
         }
     }

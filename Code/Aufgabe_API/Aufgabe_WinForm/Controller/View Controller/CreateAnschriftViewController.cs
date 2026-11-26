@@ -1,8 +1,5 @@
 ﻿using Aufgabe_DTO.Anschrift;
 using Aufgabe_WinForm.Controller.API_Controller;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Aufgabe_WinForm.Controller.View_Controller
 {

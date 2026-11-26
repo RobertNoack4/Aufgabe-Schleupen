@@ -28,17 +28,17 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                if(personID <= 0)
+                if (personID <= 0)
                 {
                     return BadRequest("PersonID must be greater than 0");
                 }
 
                 var anschriften = await _dbContext.Anschrift.Where(x => x.PersonID == personID).ToListAsync();
                 var dtoResponse = _mapper.Map<List<AnschriftDTO>>(anschriften);
-                
+
                 return Ok(dtoResponse);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }
@@ -53,7 +53,7 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                if(personID <= 0)
+                if (personID <= 0)
                 {
                     return BadRequest("ID must be greater than 0");
                 }
@@ -85,7 +85,7 @@ namespace Aufgabe_API.Controllers
             {
                 var anschrift = await _dbContext.Anschrift.FirstOrDefaultAsync(x => x.AnschriftID == id);
 
-                if(anschrift == null)
+                if (anschrift == null)
                 {
                     return NotFound($"No Anschrift found with ID {id}");
                 }
@@ -95,7 +95,7 @@ namespace Aufgabe_API.Controllers
 
                 return Ok();
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, ex.Message);
             }

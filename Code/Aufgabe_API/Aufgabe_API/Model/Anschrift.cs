@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Aufgabe_API.Model
 {
@@ -10,7 +9,7 @@ namespace Aufgabe_API.Model
 
         public string Postleitzahl { get; set; }
 
-        public string Ort {  get; set; }
+        public string Ort { get; set; }
 
         public string Straße { get; set; }
 

@@ -1,7 +1,5 @@
 using Aufgabe_DTO.Person;
-using Aufgabe_WinForm.Controller;
 using Aufgabe_WinForm.Controller.View_Controller;
-using Aufgabe_WinForm.Services;
 
 namespace Aufgabe_WinForm
 {
@@ -35,7 +33,7 @@ namespace Aufgabe_WinForm
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if(textBox1.Text == "")
+            if (textBox1.Text == "")
             {
                 dataGridView1.DataSource = await _controller.GetPersonenAsync();
             }

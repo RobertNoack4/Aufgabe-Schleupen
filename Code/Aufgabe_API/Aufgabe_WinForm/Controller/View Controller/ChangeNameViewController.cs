@@ -15,7 +15,8 @@ namespace Aufgabe_WinForm.Controller.View_Controller
 
         public async Task<PersonCompleteDTO> UpdatePersonNameAsync(string name, string vorname)
         {
-            var personUpdateNameDTO = new PersonUpdateNameDTO{
+            var personUpdateNameDTO = new PersonUpdateNameDTO
+            {
                 PersonID = _personID,
                 Name = name,
                 Vorname = vorname

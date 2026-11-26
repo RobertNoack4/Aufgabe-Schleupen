@@ -44,7 +44,7 @@ namespace Aufgabe_WinForm.Controller
             {
                 return await _personenService.GetPersonByIdAsync<PersonCompleteDTO>(id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Console.WriteLine($"Unexpected Error: {ex.Message}");
                 return null;

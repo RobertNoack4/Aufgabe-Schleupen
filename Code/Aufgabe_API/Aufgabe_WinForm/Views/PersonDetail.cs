@@ -37,7 +37,7 @@ namespace Aufgabe_WinForm
         private async Task LoadAnschriftenDataFromAPI()
         {
             AnschriftenDataGrid.DataSource = await _controller.GetAnschriftenByPersonIDAsync();
-            if(!AnschriftenDataGrid.Columns.Contains("DeleteButton"))
+            if (!AnschriftenDataGrid.Columns.Contains("DeleteButton"))
             {
                 AnschriftenDataGrid.Columns.Add(CreateButtonColumn());
             }
@@ -46,7 +46,7 @@ namespace Aufgabe_WinForm
         private async Task LoadTelefonverbindungenDataFromAPI()
         {
             TelefonDataGrid.DataSource = await _controller.GetTelefonverbindungByPersonIDAsync();
-            if(!TelefonDataGrid.Columns.Contains("DeleteButton"))
+            if (!TelefonDataGrid.Columns.Contains("DeleteButton"))
             {
                 TelefonDataGrid.Columns.Add(CreateButtonColumn());
             }
