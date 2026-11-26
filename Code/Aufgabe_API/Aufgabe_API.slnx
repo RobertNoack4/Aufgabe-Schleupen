@@ -1,5 +1,6 @@
 <Solution>
   <Project Path="Aufgabe_API/Aufgabe_API.csproj" />
+  <Project Path="Aufgabe_APITests/Aufgabe_APITests.csproj" Id="eef4f185-2851-4fdf-8fe6-a38e56ab9e70" />
   <Project Path="Aufgabe_DTO/Aufgabe_DTO.csproj" />
   <Project Path="Aufgabe_WinForm/Aufgabe_WinForm.csproj" Id="de166605-9359-4557-b5b6-67e737bd296c" />
 </Solution>

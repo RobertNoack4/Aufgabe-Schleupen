@@ -103,7 +103,7 @@ namespace Aufgabe_API.Controllers
                     return BadRequest("PersonID in URL and PersonID in Data need to match");
                 }
 
-                var person = _dbContext.Personen.FirstOrDefault(x => x.PersonID == id);
+                var person = await _dbContext.Personen.FirstOrDefaultAsync(x => x.PersonID == id);
 
                 if (person == null)
                 {
