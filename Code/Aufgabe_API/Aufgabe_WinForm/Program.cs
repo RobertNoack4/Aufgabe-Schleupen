@@ -1,4 +1,5 @@
 using Aufgabe_WinForm.Controller;
+using Aufgabe_WinForm.Controller.API_Controller;
 using Aufgabe_WinForm.Controller.View_Controller;
 using Aufgabe_WinForm.Services;
 
@@ -16,8 +17,10 @@ namespace Aufgabe_WinForm
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
-            var personenApi = new PersonenAPIController(new PersonenService());
-            var overviewController = new OverviewController(personenApi);
+            var personenAPI = new PersonenAPIController(new PersonenService());
+            var anschriftenAPI = new AnschriftenAPIController(new AnschriftenService());
+            var telefonAPI = new TelefonverbindungAPIController(new TelefonverbindungsService());
+            var overviewController = new OverviewViewController(personenAPI, anschriftenAPI,telefonAPI);
 
             var overview = new Overview(overviewController);
 

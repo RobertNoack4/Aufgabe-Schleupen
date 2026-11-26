@@ -33,7 +33,7 @@ namespace Aufgabe_API.Controllers
                     return BadRequest("PersonID must be greater than 0");
                 }
 
-                var anschriften = await _dbContext.Anschriften.Where(x => x.PersonID == personID).ToListAsync();
+                var anschriften = await _dbContext.Anschrift.Where(x => x.PersonID == personID).ToListAsync();
                 var dtoResponse = _mapper.Map<List<AnschriftDTO>>(anschriften);
                 
                 return Ok(dtoResponse);
@@ -65,7 +65,7 @@ namespace Aufgabe_API.Controllers
                 }
 
                 Anschrift anschrift = _mapper.Map<Anschrift>(anschriftCreateDTO);
-                await _dbContext.Anschriften.AddAsync(anschrift);
+                await _dbContext.Anschrift.AddAsync(anschrift);
                 await _dbContext.SaveChangesAsync();
 
                 var anschriftDTO = _mapper.Map<AnschriftDTO>(anschrift);
@@ -83,14 +83,14 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                var anschrift = await _dbContext.Anschriften.FirstOrDefaultAsync(x => x.AnschriftID == id);
+                var anschrift = await _dbContext.Anschrift.FirstOrDefaultAsync(x => x.AnschriftID == id);
 
                 if(anschrift == null)
                 {
                     return NotFound($"No Anschrift found with ID {id}");
                 }
 
-                _dbContext.Anschriften.Remove(anschrift);
+                _dbContext.Anschrift.Remove(anschrift);
                 await _dbContext.SaveChangesAsync();
 
                 return Ok();

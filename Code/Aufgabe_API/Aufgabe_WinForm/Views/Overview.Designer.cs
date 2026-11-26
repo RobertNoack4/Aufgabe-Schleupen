@@ -53,9 +53,9 @@ namespace Aufgabe_WinForm
             // 
             loadBtn.Location = new Point(12, 12);
             loadBtn.Name = "loadBtn";
-            loadBtn.Size = new Size(75, 23);
+            loadBtn.Size = new Size(121, 23);
             loadBtn.TabIndex = 1;
-            loadBtn.Text = "Load Content";
+            loadBtn.Text = "Inhalte Laden";
             loadBtn.UseVisualStyleBackColor = true;
             loadBtn.Click += button1_Click;
             // 

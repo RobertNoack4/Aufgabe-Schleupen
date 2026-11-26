@@ -26,7 +26,16 @@ namespace Aufgabe_WinForm.Services
             });
         }
 
-        public Task<T?> UpdatePersonName<T>(PersonUpdateNameDTO personUpdateNameDTO)
+        public Task<T?> GetPersonByIdAsync<T>(int id)
+        {
+            return SendAsync<T>(new ApiRequest
+            {
+                ApiType= ApiType.ApiTypeEnum.GET,
+                Url = $"{endpoint}/{id}"
+            });
+        }
+
+        public Task<T?> UpdatePersonNameAsync<T>(PersonUpdateNameDTO personUpdateNameDTO)
         {
             return SendAsync<T>(new ApiRequest
             {

@@ -38,11 +38,24 @@ namespace Aufgabe_WinForm.Controller
             }
         }
 
+        public async Task<PersonCompleteDTO> GetPersonByIdAsync(int id)
+        {
+            try
+            {
+                return await _personenService.GetPersonByIdAsync<PersonCompleteDTO>(id);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Unexpected Error: {ex.Message}");
+                return null;
+            }
+        }
+
         public async Task<PersonCompleteDTO> UpdatePersonNameAsync(PersonUpdateNameDTO personUpdateNameDTO)
         {
             try
             {
-                return await _personenService.UpdatePersonName<PersonCompleteDTO>(personUpdateNameDTO);
+                return await _personenService.UpdatePersonNameAsync<PersonCompleteDTO>(personUpdateNameDTO);
             }
             catch (Exception ex)
             {

@@ -29,7 +29,7 @@ namespace Aufgabe_WinForm.Controller.API_Controller
             }
         }
 
-        public async Task<TelefonverbindungDTO> CreateAnschriftAsync(TelefonverbindungCreateDTO telefonverbindungCreateDTO)
+        public async Task<TelefonverbindungDTO> CreateTelefonverbindungAsync(TelefonverbindungCreateDTO telefonverbindungCreateDTO)
         {
             try
             {

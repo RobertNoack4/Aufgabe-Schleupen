@@ -112,6 +112,7 @@ namespace Aufgabe_API.Controllers
 
                 person.Name = personUpdateNameDTO.Name;
                 person.Vorname = personUpdateNameDTO.Vorname;
+                person.Name_Groß = $"{personUpdateNameDTO.Name.ToUpper()} {personUpdateNameDTO.Vorname.ToUpper()}";
 
                 await _dbContext.SaveChangesAsync();
                 return Ok(person);

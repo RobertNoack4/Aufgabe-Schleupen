@@ -7,9 +7,9 @@ namespace Aufgabe_WinForm
 {
     public partial class Overview : Form
     {
-        private readonly OverviewController _controller;
+        private readonly OverviewViewController _controller;
 
-        internal Overview(OverviewController controller)
+        internal Overview(OverviewViewController controller)
         {
             InitializeComponent();
             _controller = controller;
@@ -29,13 +29,20 @@ namespace Aufgabe_WinForm
 
             if (dataGridView1.Rows[e.RowIndex].DataBoundItem is PersonPartialDTO person)
             {
-                var test = person.Name;
+                _controller.CreatePersonDetailView(person.PersonID);
             }
         }
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = await _controller.GetPersonenByNameAsync(textBox1.Text);
+            if(textBox1.Text == "")
+            {
+                dataGridView1.DataSource = await _controller.GetPersonenAsync();
+            }
+            else
+            {
+                dataGridView1.DataSource = await _controller.GetPersonenByNameAsync(textBox1.Text);
+            }
         }
     }
 }

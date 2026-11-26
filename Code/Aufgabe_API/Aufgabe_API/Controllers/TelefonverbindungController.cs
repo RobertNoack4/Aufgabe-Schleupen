@@ -35,7 +35,7 @@ namespace Aufgabe_API.Controllers
                     return BadRequest("PersonID must be greater than 0");
                 }
 
-                var telefonverbindungen = await _dbContext.Telefonverbindungen.Where(x => x.PersonID == personID).ToListAsync();
+                var telefonverbindungen = await _dbContext.Telefonverbindung.Where(x => x.PersonID == personID).ToListAsync();
                 var dtoResponse = _mapper.Map<List<TelefonverbindungDTO>>(telefonverbindungen);
 
                 return Ok(dtoResponse);
@@ -67,7 +67,7 @@ namespace Aufgabe_API.Controllers
                 }
 
                 Telefonverbindung telefonverbindung = _mapper.Map<Telefonverbindung>(telefonverbindungCreateDTO);
-                await _dbContext.Telefonverbindungen.AddAsync(telefonverbindung);
+                await _dbContext.Telefonverbindung.AddAsync(telefonverbindung);
                 await _dbContext.SaveChangesAsync();
 
                 var telefonVerbindungDTO = _mapper.Map<TelefonverbindungDTO>(telefonverbindung);
@@ -85,14 +85,14 @@ namespace Aufgabe_API.Controllers
         {
             try
             {
-                var telefonverbindung = await _dbContext.Telefonverbindungen.FirstOrDefaultAsync(x => x.TelefonverbindungsID == id);
+                var telefonverbindung = await _dbContext.Telefonverbindung.FirstOrDefaultAsync(x => x.TelefonverbindungsID == id);
 
                 if (telefonverbindung == null)
                 {
                     return NotFound($"No Telefonverbindung found with ID {id}");
                 }
 
-                _dbContext.Telefonverbindungen.Remove(telefonverbindung);
+                _dbContext.Telefonverbindung.Remove(telefonverbindung);
                 await _dbContext.SaveChangesAsync();
 
                 return Ok();
